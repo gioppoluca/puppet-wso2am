@@ -24,10 +24,10 @@
                     <testOnBorrow>true</testOnBorrow>
                     <validationQuery>SELECT 1</validationQuery>
                     <validationInterval>30000</validationInterval>
-                </configuration>
-            </definition><% end %>
+                </configuration><% end %>
+            </definition>
         </datasource>
-        
+
         <datasource>
             <name>WSO2_CARBON_DB_GREG</name>
             <description>The datasource used for registry and user manager of remote GREG</description>
@@ -35,7 +35,7 @@
                 <name>jdbc/WSO2CarbonDB_GREG</name>
             </jndiConfig>
             <definition type="RDBMS">
-                <% if scope.lookupvar('wso2bam::db_type') == "h2" %><configuration>
+                <% if scope.lookupvar('wso2am::greg_db_type') == "h2" %><configuration>
                    <url>jdbc:h2:repository/database/samples/<%= scope.lookupvar('wso2am::greg_db_name') %>;AUTO_SERVER=TRUE</url>
                    <username>wso2carbon</username>
                    <password>wso2carbon</password>
